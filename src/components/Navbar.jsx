@@ -41,7 +41,7 @@ const Navbar = ({ scrolled }) => {
           duration={500}
           className={`font-sexy text-xl font-semibold cursor-pointer transition-all ${scrolled ? "text-cyan-400" : "text-white"}`}
         >
-          {scrolled ? "CP" : "CYBERPUNK"}
+          {scrolled ? "Yididia Abera" : "Yididia Abera"}
         </Link>
 
         <div className="hidden md:flex space-x-8">

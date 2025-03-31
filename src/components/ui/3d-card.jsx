@@ -1,4 +1,4 @@
-import { cn } from "../../lib/utils"; // Adjust path based on your structure
+import { cn } from "../../lib/utils";
 import React, {
   createContext,
   useState,
@@ -27,19 +27,15 @@ export const CardContainer = ({ children, className, containerClassName }) => {
   };
 
   const handleMouseLeave = () => {
+    if (!containerRef.current) return;
     setIsMouseEntered(false);
-    if (containerRef.current) {
-      containerRef.current.style.transform = "rotateY(0deg) rotateX(0deg)";
-    }
+    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
   };
 
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn(
-          "py-20 flex items-center justify-center",
-          containerClassName
-        )}
+        className={cn("flex items-center justify-center", containerClassName)}
         style={{ perspective: "1000px" }}
       >
         <div
@@ -60,11 +56,18 @@ export const CardContainer = ({ children, className, containerClassName }) => {
   );
 };
 
-export const CardBody = ({ children, className }) => (
-  <div className={cn("h-96 w-96 [transform-style:preserve-3d]", className)}>
-    {children}
-  </div>
-);
+export const CardBody = ({ children, className }) => {
+  return (
+    <div
+      className={cn(
+        "[transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
 
 export const CardItem = ({
   as: Tag = "div",
@@ -87,9 +90,11 @@ export const CardItem = ({
 
   const handleAnimations = () => {
     if (!ref.current) return;
-    ref.current.style.transform = isMouseEntered
-      ? `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
-      : "translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
+    if (isMouseEntered) {
+      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+    } else {
+      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
+    }
   };
 
   return (
@@ -105,7 +110,8 @@ export const CardItem = ({
 
 export const useMouseEnter = () => {
   const context = useContext(MouseEnterContext);
-  if (!context)
-    throw new Error("useMouseEnter must be used within MouseEnterProvider");
+  if (context === undefined) {
+    throw new Error("useMouseEnter must be used within a MouseEnterProvider");
+  }
   return context;
 };

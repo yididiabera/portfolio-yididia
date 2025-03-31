@@ -62,16 +62,23 @@ const Hero = () => {
           aesthetic design.
         </p>
 
-        <button className="relative group">
+        {/* <button
+          onClick={() =>
+            document
+              .getElementById("projects")
+              .scrollIntoView({ behavior: "smooth" })
+          }
+          className="relative group"
+        >
           <span className="absolute inset-0 bg-cyan-500 rounded-lg blur-md opacity-75 group-hover:opacity-100 transition-opacity duration-300"></span>
           <span className="relative px-8 py-3 bg-gray-900 rounded-lg border border-cyan-400 text-cyan-400 font-sexy uppercase text-sm tracking-wider group-hover:bg-cyan-400 group-hover:text-gray-900 transition-all duration-300">
             View My Work
           </span>
-        </button>
+        </button> */}
 
         <div className="mt-20 animate-bounce">
           <svg
-            className="w-6 h-6 mx-auto text-cyan-400"
+            className="w-10 h-20 mx-auto text-cyan-400"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

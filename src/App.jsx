@@ -40,7 +40,7 @@ function App() {
 
       <footer className="py-6 text-center text-gray-500 text-sm">
         <p>
-          © {new Date().getFullYear()} Cyberpunk Portfolio. All systems
+          © {new Date().getFullYear()} Yididia Abera Portfolio. All systems
           nominal.
         </p>
       </footer>

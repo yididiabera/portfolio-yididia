@@ -1,141 +1,61 @@
-import { useState } from "react";
-
-const ProjectCard = ({ title, description, tags, image, links }) => {
-  const [isGlitching, setIsGlitching] = useState(false);
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    setTilt({
-      x: (y - centerY) / 20,
-      y: (centerX - x) / 20,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0 });
-  };
-
-  const handleClick = () => {
-    setIsGlitching(true);
-    setTimeout(() => setIsGlitching(false), 500);
-  };
-
-  return (
-    <div
-      className="relative group cursor-pointer"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onClick={handleClick}
-    >
-      <div
-        className={`relative overflow-hidden rounded-lg border border-gray-700 transition-all duration-300 ${isGlitching ? "animate-glitch" : ""}`}
-        style={{
-          transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-          boxShadow: `${tilt.y * 2}px ${tilt.x * 2}px 15px rgba(0, 240, 255, 0.1)`,
-        }}
-      >
-        {/* Project image placeholder */}
-        <div className="h-48 bg-gray-800 flex items-center justify-center">
-          <div className="text-gray-500">{image || "Project Image"}</div>
-        </div>
-
-        <div className="p-6 bg-gray-900/80 backdrop-blur-sm">
-          <h3 className="text-xl font-sexy mb-2 text-white group-hover:text-cyan-400 transition-colors">
-            {title}
-          </h3>
-          <p className="text-gray-300 mb-4">{description}</p>
-
-          <div className="flex flex-wrap gap-2 mb-4">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="px-2 py-1 bg-gray-800 text-cyan-400 text-xs rounded"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <div className="flex space-x-4">
-            {links.demo && (
-              <a
-                href={links.demo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-cyan-400 text-gray-900 text-sm font-sexy rounded hover:bg-cyan-300 transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                Live Demo
-              </a>
-            )}
-            {links.github && (
-              <a
-                href={links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 border border-cyan-400 text-cyan-400 text-sm font-sexy rounded hover:bg-cyan-400 hover:text-gray-900 transition-colors"
-                onClick={(e) => e.stopPropagation()}
-              >
-                GitHub
-              </a>
-            )}
-          </div>
-        </div>
-
-        {/* Neon border effect */}
-        <div className="absolute inset-0 rounded-lg pointer-events-none overflow-hidden">
-          <div className="absolute inset-0 border-2 border-transparent group-hover:border-cyan-400 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-          <div className="absolute inset-0 border-2 border-transparent group-hover:border-cyan-400 opacity-0 group-hover:opacity-50 blur-sm group-hover:animate-pulse transition-all duration-300"></div>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
+import { SiGithub } from "react-icons/si";
+import { FiExternalLink } from "react-icons/fi";
+import apollo from "../assets/apollo.png";
+import blog from "../assets/blog.png";
+import student from "../assets/student.png";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Neon Dashboard",
+      title: "Chronicles",
       description:
-        "A sleek admin dashboard with cyberpunk aesthetics and real-time data visualization.",
-      tags: ["React", "Tailwind", "D3.js", "WebSockets"],
+        "Chronicles is a simple and elegant blog platform built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It allows users to create, edit, and share blog posts while focusing on clean design and an intuitive user experience. Features include user authentication, role-based access, responsive design, third-party API integration, and customizable themes.",
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "bcrypt.js",
+      ],
+      image: blog, // Replace 'chronicles' with your actual image variable or path
       links: {
         demo: "#",
-        github: "#",
+        github: "https://github.com/yididiabera/Chronicles",
       },
     },
+
     {
-      title: "CyberTerminal",
+      title: "ApolloLironRecs",
       description:
-        "A web-based terminal emulator with custom commands and cyberpunk styling.",
-      tags: ["JavaScript", "CSS", "Node.js"],
+        "ApolloLironRecs is a web application that provides personalized music recommendations using the Spotify API. It features a user-friendly design, allowing users to search for tracks, explore various genres, select their favorite genres for tailored suggestions, access detailed track information, and listen to songs directly via Spotify.",
+      tags: ["React", "Tailwind CSS", "Python", "Spotify API"],
+      image: apollo,
       links: {
         demo: "#",
-        github: "#",
+        github: "https://github.com/yididiabera/ApolloLironRecs",
       },
     },
+
     {
-      title: "Synthwave Player",
+      title: "Student Budget Planner",
       description:
-        "Music player with visualizer and synthwave theme. Responsive and accessible.",
-      tags: ["React", "Web Audio API", "Canvas"],
+        "Student Budget Planner is a web and mobile application collaboratively developed with my teammates during the GDG AAU 30-Hour Innovation Challenge. It empowers students to take control of their finances with features like real-time expense tracking, smart alerts for overspending, AI-powered financial insights, and cross-platform availability. Our team placed 3rd in the hackathon for this innovative and impactful project!",
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "Go",
+        "Flutter",
+        "Next.js",
+        "PostgreSQL",
+        "AI",
+      ],
+      image: student,
       links: {
         demo: "#",
-        github: "#",
-      },
-    },
-    {
-      title: "AR Cityscape",
-      description:
-        "Augmented reality experience overlaying cyberpunk elements on real-world views.",
-      tags: ["Three.js", "AR.js", "WebXR"],
-      links: {
-        github: "#",
+        github: "https://github.com/GDGAAU/student_budget_planner",
       },
     },
   ];
@@ -143,13 +63,70 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 scroll-mt-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-sexy font-semibold mb-12 text-center">
-          <span className="text-magenta-400">//</span> Featured Projects
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          <span className="text-cyan-400">//</span> Featured Projects
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <CardContainer key={index} className="inter-var">
+              <CardBody className="bg-gray-900 relative group/card border border-gray-700 w-full h-full rounded-xl p-6 hover:shadow-2xl hover:shadow-cyan-400/[0.1] transition-all">
+                <CardItem
+                  translateZ="50"
+                  className="text-xl font-bold text-white"
+                >
+                  {project.title}
+                </CardItem>
+                <CardItem
+                  as="p"
+                  translateZ="60"
+                  className="text-gray-300 text-sm max-w-sm mt-2 tracking-wide"
+                >
+                  {project.description}
+                </CardItem>
+                <CardItem translateZ="100" className="w-full mt-4">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-48 w-full object-cover rounded-xl"
+                  />
+                </CardItem>
+
+                <div className="flex flex-wrap gap-2 mt-6 p-3">
+                  {project.tags.map((tag, i) => (
+                    <CardItem
+                      key={i}
+                      translateZ={20}
+                      className="px-3 py-1.5 bg-gray-800 text-white text-xs rounded-xl"
+                    >
+                      {tag}
+                    </CardItem>
+                  ))}
+                </div>
+                <div className="flex justify-between items-center mt-6">
+                  {project.links.demo && (
+                    <CardItem
+                      translateZ={20}
+                      as="a"
+                      href={project.links.demo}
+                      target="_blank"
+                      className="px-4 py-2 rounded-xl border border-cyan-400 text-cyan-400  text-xs font-bold flex items-center gap-1"
+                    >
+                      <FiExternalLink /> Demo
+                    </CardItem>
+                  )}
+                  <CardItem
+                    translateZ={20}
+                    as="a"
+                    href={project.links.github || "#"}
+                    target="_blank"
+                    className="px-4 py-2 rounded-xl border border-cyan-400 text-cyan-400 text-xs font-bold flex items-center gap-1"
+                  >
+                    <SiGithub /> Code
+                  </CardItem>
+                </div>
+              </CardBody>
+            </CardContainer>
           ))}
         </div>
       </div>
