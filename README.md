@@ -1,53 +1,43 @@
+# 🚀 Yididia Abera - Portfolio Website  
 
-```markdown
-# Yididia Abera - Portfolio Website
+![Portfolio Preview](./public/screenshot.png)  
 
-![Portfolio Preview](./public/screenshot.png)
+A **modern, cyberpunk-inspired developer portfolio** showcasing my projects, skills, and professional information. Built with **Next.js** and **Tailwind CSS** for smooth interactions and a futuristic design.  
 
-Modern developer portfolio showcasing my projects, skills, and professional information.
+---
 
 ## 🔗 Live Demo  
-[View Live Portfolio](https://my-portfolio-alpha-liart-58.vercel.app/)  
+🔗 **[View Portfolio](https://my-portfolio-alpha-liart-58.vercel.app/)**  
+
+---
 
 ## ✨ Features  
-- Responsive design for all devices  
-- Interactive 3D project cards  
-- Animated skills visualization  
-- Smooth scroll navigation  
-- Contact form with validation  
+✅ **Fully Responsive** - Optimized for all devices  
+✅ **3D & Tilt Effects** - Dynamic project cards with depth  
+✅ **Animated Skills Visualization** - Smooth and engaging UI  
+✅ **Interactive Navigation** - Smooth scrolling experience  
+✅ **Contact Section** - Real icons & colors for social links  
+
+---
 
 ## 🛠 Tech Stack  
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)  
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)  
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)  
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)  
 
+---
+
 ## 🚀 Quick Start  
-1. Clone repo:  
+1️⃣ **Clone the Repository**  
 ```bash
 git clone https://github.com/yididiabera/portfolio-yididia.git
-```  
-2. Install dependencies:  
-```bash
-cd portfolio && npm install
-```  
-3. Run dev server:  
-```bash
-npm run dev
-```  
+cd portfolio-yididia
 
-## 📂 Structure  
-```
-src/
-├── components/  # UI components
-├── lib/         # Utilities
-├── pages/       # Main sections
-└── styles/      # Global CSS
-```
-
-## 📬 Connect  
-- LinkedIn: Yididia Abera (https://www.linkedin.com/in/yididia-abera-a78276266/)  
-- GitHub: yididiabera(https://github.com/yididiabera)  
-- Email: yididiabera87@gmail.com  
-
-## 📝 License  
-MIT © Yididia Abera
+📬 Contact Me
+📧 Email: yididiabera@gmail.com
+🔗 LinkedIn: @yididia-abera
+🐙 GitHub: @yididiabera
+❌ X (Twitter): @yididia_abera
+📨 Telegram: @BelovedofJah
+📷 Instagram: @yididii_abera
