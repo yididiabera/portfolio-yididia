@@ -1,6 +1,4 @@
-Here's the complete **copy-paste-friendly** `README.md` file:  
-
-```md
+```
 # 🚀 Yididia Abera - Portfolio Website  
 
 ![Portfolio Preview](./public/screenshot.png)  
@@ -41,15 +39,11 @@ cd portfolio-yididia
 2️⃣ **Install Dependencies**  
 ```bash
 npm install
-# or
-yarn install
 ```
 
 3️⃣ **Run the Development Server**  
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 4️⃣ **Open in Browser**  
