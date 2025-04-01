@@ -1,12 +1,53 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```markdown
+# Yididia Abera - Portfolio Website
 
-Currently, two official plugins are available:
+![Portfolio Preview](./public/screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Modern developer portfolio showcasing my projects, skills, and professional information.
 
-## Expanding the ESLint configuration
+## 🔗 Live Demo  
+[View Live Portfolio](https://my-portfolio-alpha-liart-58.vercel.app/)  
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features  
+- Responsive design for all devices  
+- Interactive 3D project cards  
+- Animated skills visualization  
+- Smooth scroll navigation  
+- Contact form with validation  
+
+## 🛠 Tech Stack  
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)  
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)  
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)  
+
+## 🚀 Quick Start  
+1. Clone repo:  
+```bash
+git clone https://github.com/yididiabera/portfolio-yididia.git
+```  
+2. Install dependencies:  
+```bash
+cd portfolio && npm install
+```  
+3. Run dev server:  
+```bash
+npm run dev
+```  
+
+## 📂 Structure  
+```
+src/
+├── components/  # UI components
+├── lib/         # Utilities
+├── pages/       # Main sections
+└── styles/      # Global CSS
+```
+
+## 📬 Connect  
+- LinkedIn: Yididia Abera (https://www.linkedin.com/in/yididia-abera-a78276266/)  
+- GitHub: yididiabera(https://github.com/yididiabera)  
+- Email: yididiabera87@gmail.com  
+
+## 📝 License  
+MIT © Yididia Abera
