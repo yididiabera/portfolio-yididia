@@ -1,3 +1,6 @@
+Here's the complete **copy-paste-friendly** `README.md` file:  
+
+```md
 # 🚀 Yididia Abera - Portfolio Website  
 
 ![Portfolio Preview](./public/screenshot.png)  
@@ -33,11 +36,56 @@ A **modern, cyberpunk-inspired developer portfolio** showcasing my projects, ski
 ```bash
 git clone https://github.com/yididiabera/portfolio-yididia.git
 cd portfolio-yididia
+```
 
-📬 Contact Me
-📧 Email: yididiabera@gmail.com
-🔗 LinkedIn: @yididia-abera
-🐙 GitHub: @yididiabera
-❌ X (Twitter): @yididia_abera
-📨 Telegram: @BelovedofJah
-📷 Instagram: @yididii_abera
+2️⃣ **Install Dependencies**  
+```bash
+npm install
+# or
+yarn install
+```
+
+3️⃣ **Run the Development Server**  
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4️⃣ **Open in Browser**  
+```
+http://localhost:3000
+```
+
+---
+
+## 📂 Project Structure  
+```
+/public         # Static assets (logos, images, etc.)
+/components     # UI components (Navbar, Footer, Project Cards, etc.)
+/pages         # Next.js pages (index.js, projects.js, contact.js, etc.)
+/styles        # Global styles
+```
+
+---
+
+## 📬 Contact Me  
+📧 **Email:** [yididiabera@gmail.com](mailto:yididiabera@gmail.com)  
+🔗 **LinkedIn:** [@yididia-abera](https://www.linkedin.com/in/yididia-abera-a78276266/)  
+🐙 **GitHub:** [@yididiabera](https://github.com/yididiabera)  
+❌ **X (Twitter):** [@yididia_abera](https://x.com/yididia_abera)  
+📨 **Telegram:** [@BelovedofJah](https://t.me/BelovedofJah)  
+📷 **Instagram:** [@yididii_abera](https://www.instagram.com/yididii_abera/)  
+
+---
+
+## 📜 License  
+This project is **open-source** under the [MIT License](LICENSE).
+
+---
+
+## ⭐ Show Your Support!  
+If you find this portfolio helpful, **give it a star** ⭐ and share feedback! 🚀  
+
+---
+```
